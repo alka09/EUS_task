@@ -32,13 +32,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'title:ntext',
             ['attribute' => 'created_at', 'format' => ['date', 'php:d-m-Y H:i:s']],
             ['attribute' => 'updated_at', 'format' => ['date', 'php:d-m-Y H:i:s']],
-            [
-                'value' => function (Tasks $model) {
-                    return $model->mainPhoto ? Html::img($model->mainPhoto->getThumbFileUrl('file', 'admin')) : null;
-                },
-                'format' => 'raw',
-                'contentOptions' => ['style' => 'width: 100px'],
-            ],
+//            [
+//                'value' => function (Tasks $model) {
+//                    return $model->mainPhoto ? Html::img($model->mainPhoto->getThumbFileUrl('file', 'admin')) : null;
+//                },
+//                'format' => 'raw',
+//                'contentOptions' => ['style' => 'width: 100px'],
+//            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

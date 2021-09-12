@@ -19,9 +19,10 @@ class TaskManageService
     public function create(TaskForm $form): Tasks
     {
         $task = Tasks::create(
-            $form->user_id,
             $form->title
         );
+
+        $task->user_id = \Yii::$app->user->identity->getId();
 
         foreach ($form->photos->files as $file) {
             $task->addPhoto($file);

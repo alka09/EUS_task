@@ -51,7 +51,7 @@ class Photo extends ActiveRecord
                 'thumbUrl' => '@web/images/cache/[[attribute_task_id]]/[[profile]]_[[id]].[[extension]]',
                 'thumbs' => [
                     'file' => ['width' => 100, 'height' => 70],
-                    'thumb' => ['width' => 640, 'height' => 480],
+                    'thumb' => ['width' => 100, 'height' => 70],
                 ],
             ],
         ];

@@ -45,6 +45,7 @@ class TasksController extends Controller
     public function actionIndex()
     {
         $searchModel = new TasksSearch();
+        $searchModel->user_id = \Yii::$app->user->id;
         $dataProvider = $searchModel->search(\Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -85,10 +86,11 @@ class TasksController extends Controller
     public function actionCreate()
     {
         $form = new TaskForm();
+        $model = new Tasks();
         if ($form->load(\Yii::$app->request->post()) && $form->validate()) {
             try {
                 $task = $this->service->create($form);
-                return $this->redirect(['view', 'id' => $task->id]);
+                \Yii::$app->user->identity->getId();
             } catch (\DomainException $e) {
                 Yii::$app->errorHandler->logException($e);
                 Yii::$app->session->setFlash('error', $e->getMessage());
