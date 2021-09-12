@@ -106,6 +106,7 @@ class TasksController extends Controller
      * @return mixed
      */
     public function actionUpdate(int $id){
+
         $task = $this->findModel($id);
 
         $form = new TaskForm($task);

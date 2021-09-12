@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php foreach ($task->photos as $photo): ?>
                     <div class="col-md-2 col-xs-3" style="text-align: center">
                         <div class="btn-group">
-                            <?= Html::a('<span class="glyphicon glyphicon-arrow-left"></span>', ['move-photo-up', 'id' => $task->id, 'photo_id' => $photo->id], [
+                            <?= Html::a('<span class="glyphicon glyphicon-chevron-left"></span>', ['move-photo-up', 'id' => $task->id, 'photo_id' => $photo->id], [
                                 'class' => 'btn btn-default',
                                 'data-method' => 'post',
                             ]); ?>
@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'data-method' => 'post',
                                 'data-confirm' => 'Remove photo?',
                             ]); ?>
-                            <?= Html::a('<span class="glyphicon glyphicon-arrow-right"></span>', ['move-photo-down', 'id' => $task->id, 'photo_id' => $photo->id], [
+                            <?= Html::a('<span class="glyphicon glyphicon-chevron-right"></span>', ['move-photo-down', 'id' => $task->id, 'photo_id' => $photo->id], [
                                 'class' => 'btn btn-default',
                                 'data-method' => 'post',
                             ]); ?>

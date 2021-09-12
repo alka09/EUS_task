@@ -7,6 +7,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\TasksSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $model app\tasks\entities\Tasks */
 
 $this->title = 'Tasks';
 $this->params['breadcrumbs'][] = $this->title;
@@ -19,14 +20,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Tasks', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<!--    --><?php //echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'user_id',
             'title:ntext',
@@ -39,7 +38,6 @@ $this->params['breadcrumbs'][] = $this->title;
 //                'format' => 'raw',
 //                'contentOptions' => ['style' => 'width: 100px'],
 //            ],
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

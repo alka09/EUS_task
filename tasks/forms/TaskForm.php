@@ -14,6 +14,7 @@ use app\tasks\forms\PhotosForm;
 class TaskForm extends CompositeForm
 {
 
+    public $id;
     public $title;
     public $user_id;
 
@@ -21,6 +22,7 @@ class TaskForm extends CompositeForm
 
     public function __construct(Tasks $task = null, $config = [])
     {
+        $this->id = $task->id;
         $this->user_id = $task->user_id;
         $this->title = $task->title;
         $this->photos = new PhotosForm();
