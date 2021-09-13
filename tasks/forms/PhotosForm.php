@@ -16,7 +16,10 @@ class PhotosForm extends Model
     public function rules(): array
     {
         return [
-            ['files', 'each', 'rule' => ['image']],
+            ['files', 'each', 'rule' => [
+                'image',
+                'extensions' => 'png'
+            ]],
         ];
     }
 
